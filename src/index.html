@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!--
+ Copyright (c) 2014, 2017, Oracle and/or its affiliates.
+ The Universal Permissive License (UPL), Version 1.0
+ -->
+
+<!-- ************************ IMPORTANT INFORMATION ************************************
+  This web navigation drawer template is provided as an example of how to configure
+  a JET web application with a navigation drawer as a single page application
+  using ojRouter and ojModule.  It contains the Oracle JET framework and a default
+  requireJS configuration file to show how JET can be setup in a common application.
+  This project template can be used in conjunction with demo code from the JET
+  website to test JET component behavior and interactions.
+
+  Any CSS styling with the prefix "demo-" is for demonstration only and is not
+  provided as part of the JET framework.
+
+  Please see the demos under Cookbook/Patterns/App Shell: Web and the CSS documentation
+  under Support/API Docs/Non-Component Styling on the JET website for more information on how to use 
+  the best practice patterns shown in this template.
+
+  Aria Landmark role attributes are added to the different sections of the application
+  for accessibility compliance. If you change the type of content for a specific
+  section from what is defined, you should also change the role value for that
+  section to represent the appropriate content type.
+  ***************************** IMPORTANT INFORMATION ************************************ -->
+<html lang="en-us">
+  <head>
+    <title>Kevin's Blog</title>
+
+    <link rel="stylesheet" href="css/libs/oj/v3.2.0/alta/oj-alta-min.css" type="text/css"/>    
+    <link rel="stylesheet" href="css/override.css" type="text/css"/>
+
+  </head>
+  <body class="oj-web-applayout-body">
+
+      
+    <div id="globalBody" class="oj-offcanvas-outer-wrapper oj-offcanvas-page">
+        <h1>Kevin's Blog</h1>
+        <hr>
+
+        <div>New Title</div>
+        <input class='title' data-bind="value: title"><br>
+        <div>New Content</div>
+        <textarea class='content' data-bind="value: text"></textarea><br>
+        <button id="create" data-bind="click: createPost.bind($data)">Create New Post</button>
+        <button id="generate" data-bind="click: generatePosts">Generate Posts</button> 
+        <button id="deleteAll" data-bind="click: deleteAllPosts">Delete All Posts</button> 
+        <hr>
+  
+        <!-- ko foreach: posts -->
+          <div>Title</div>
+          <input class='title' data-bind="value: title"><br>
+          <div>Content</div>          
+          <textarea class='content' data-bind="value: text"></textarea><br>
+          <div class='timestamp' data-bind="text: timestamp"></div>          
+          <button class="edit" data-bind="click: $parent.editPost.bind($data)">Save</button>
+          <button class="delete" data-bind="click: $parent.deletePost.bind($data)">Delete</button>
+          <br>
+          <hr>    
+        <!-- /ko --> 
+    </div>
+    
+    <script type="text/javascript" src="js/libs/require/require.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+
+  </body>
+
+
+
+</html>
+
+

@@ -1,0 +1,13 @@
+.content {
+    width: 80%;
+    height: 100px;
+    margin: 10px;
+}
+
+.title {
+    width: 80%;    
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 10px;    
+}
+
